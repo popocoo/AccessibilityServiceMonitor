@@ -18,7 +18,7 @@
         </activity>
 
         <service
-            android:name=".service.AccessibilityServiceMonitor"
+            android:name=".service.AccessibilityServiceForBDD"
             android:enabled="true"
             android:exported="true"
             android:label="@string/app_name"

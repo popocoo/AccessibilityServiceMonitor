@@ -20,7 +20,7 @@ public class AccessibilitUtil {
         int accessibilityEnabled = 0;
         final String service = mContext.getPackageName() + "/" + className;
         Log.i(TAG, "service:" + service);
-        // formate: service:com.fadi.forestautoget/com.fadi.forestautoget.service.AccessibilityServiceMonitor
+        // formate: service:com.fadi.forestautoget/com.fadi.forestautoget.service.AccessibilityServiceForBDD
         try {
             accessibilityEnabled = Settings.Secure.getInt(mContext.getApplicationContext().getContentResolver(),
                     android.provider.Settings.Secure.ACCESSIBILITY_ENABLED);
