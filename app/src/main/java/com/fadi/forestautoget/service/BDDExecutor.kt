@@ -29,28 +29,26 @@ internal object BDDExecutor {
                 intent.component = cn
                 accessibilityServiceForBDD.startActivity(intent)
 
-                sleep(DELAY_TIME_LONG)
-                printAllChild(accessibilityServiceForBDD.rootInActiveWindow)
+//                sleep(DELAY_TIME_LONG)
+//                printAllChild(accessibilityServiceForBDD.rootInActiveWindow)
 
-                scroll(accessibilityServiceForBDD, 540F, 300F, 540F, 1800F)
+//                scroll(accessibilityServiceForBDD, 540F, 300F, 540F, 1800F)
 
-                sleep(DELAY_TIME_LONG)
-                printAllChild(accessibilityServiceForBDD.rootInActiveWindow)
-
-                val node = findViewByText(accessibilityServiceForBDD.rootInActiveWindow, "CPU数据库")
-                if (node != null) {
-                    val rect = Rect()
-                    node.getBoundsInScreen(rect)
-                    click(accessibilityServiceForBDD, rect.centerX().toFloat(), rect.centerY().toFloat())
+                while (true) {
+                    sleep(DELAY_TIME_LONG)
+                    val node = findViewByText(accessibilityServiceForBDD.rootInActiveWindow, "CPU数据库")
+                    node?.performAction(AccessibilityNodeInfo.ACTION_CLICK)
                 }
-
-                sleep(DELAY_TIME_LONG_MORE)
-                printAllChild(accessibilityServiceForBDD.rootInActiveWindow)
 
             }
         }.start()
     }
 
+    private fun click (accessibilityService: AccessibilityService, nodeInfo: AccessibilityNodeInfo) {
+        val rect = Rect()
+        nodeInfo.getBoundsInScreen(rect)
+        click(accessibilityService, rect.centerX().toFloat(), rect.centerY().toFloat())
+    }
 
     private fun click(accessibilityService: AccessibilityService, x: Float, y: Float) {
         val path = Path()
