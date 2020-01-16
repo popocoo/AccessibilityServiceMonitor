@@ -50,13 +50,13 @@ public class AccessibilityServiceForBDD extends AccessibilityService {
     @Override
     protected void onServiceConnected() {
         super.onServiceConnected();
-        AccessibilityServiceInfo serviceInfo = new AccessibilityServiceInfo();
-        serviceInfo.eventTypes = AccessibilityEvent.TYPES_ALL_MASK;
-        serviceInfo.feedbackType = AccessibilityServiceInfo.FEEDBACK_GENERIC;
-        serviceInfo.packageNames = new String[]{"com.tencent.mm"};
-        serviceInfo.notificationTimeout = 100;
-        serviceInfo.flags = serviceInfo.flags | AccessibilityServiceInfo.FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY | AccessibilityServiceInfo.FLAG_REPORT_VIEW_IDS;
-        setServiceInfo(serviceInfo);
+//        AccessibilityServiceInfo serviceInfo = new AccessibilityServiceInfo();
+//		serviceInfo.eventTypes = AccessibilityEvent.TYPES_ALL_MASK;
+//		serviceInfo.feedbackType = AccessibilityServiceInfo.FEEDBACK_GENERIC;
+//		serviceInfo.packageNames = new String[]{"com.tencent.mm"};
+//		serviceInfo.notificationTimeout = 100;
+//		serviceInfo.flags = serviceInfo.flags | AccessibilityServiceInfo.FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY | AccessibilityServiceInfo.FLAG_REPORT_VIEW_IDS;
+//		setServiceInfo(serviceInfo);
     }
 
     @Override
