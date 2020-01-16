@@ -1,4 +1,4 @@
-package com.fadi.forestautoget.util;
+package dc.xyn.auto.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

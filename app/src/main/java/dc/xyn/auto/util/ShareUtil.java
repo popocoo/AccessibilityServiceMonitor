@@ -1,4 +1,4 @@
-package com.fadi.forestautoget.util;
+package dc.xyn.auto.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;

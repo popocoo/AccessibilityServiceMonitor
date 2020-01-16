@@ -1,4 +1,4 @@
-package com.fadi.forestautoget.util;
+package dc.xyn.auto.util;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;

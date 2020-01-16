@@ -1,4 +1,4 @@
-package com.fadi.forestautoget.util;
+package dc.xyn.auto.util;
 
 import android.util.Log;
 import android.view.accessibility.AccessibilityNodeInfo;

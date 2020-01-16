@@ -1,4 +1,4 @@
-package com.fadi.forestautoget;
+package dc.xyn.auto;
 
 import android.app.Application;
 import android.content.Context;

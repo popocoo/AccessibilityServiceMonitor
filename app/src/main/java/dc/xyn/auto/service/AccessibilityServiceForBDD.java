@@ -1,32 +1,47 @@
-package com.fadi.forestautoget.service;
+package dc.xyn.auto.service;
 
 import android.accessibilityservice.AccessibilityService;
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
+
+import dc.xyn.auto.MyReceiver;
 
 
 public class AccessibilityServiceForBDD extends AccessibilityService {
 
     private static final String TAG = AccessibilityServiceForBDD.class.getSimpleName();
 
+    private MyReceiver myReceiver = new MyReceiver();
+
     @Override
     public void onCreate() {
         super.onCreate();
         Log.d(TAG, "onCreate");
+        BDDExecutor.INSTANCE.setAccessibilityServiceForBDD(this);
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("DC_BDD_TEST");
+        registerReceiver(myReceiver, filter);
+    }
+
+    @Override
+    public void onDestroy() {
+        unregisterReceiver(myReceiver);
+        super.onDestroy();
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (null == intent) {
-            return super.onStartCommand(intent, flags, startId);
+            return super.onStartCommand(null, flags, startId);
         }
 
         String action = intent.getAction();
         Log.d(TAG, "onStartCommand Aciton: " + action);
 
-        BDDExecutor.INSTANCE.start(this);
+        //BDDExecutor.INSTANCE.start(this);
 
         return super.onStartCommand(intent, flags, startId);
     }
@@ -38,9 +53,9 @@ public class AccessibilityServiceForBDD extends AccessibilityService {
         AccessibilityServiceInfo serviceInfo = new AccessibilityServiceInfo();
         serviceInfo.eventTypes = AccessibilityEvent.TYPES_ALL_MASK;
         serviceInfo.feedbackType = AccessibilityServiceInfo.FEEDBACK_GENERIC;
-        serviceInfo.packageNames = new String[]{"com.gotokeep.keep", "com.eg.android.AlipayGphone", "com.sinovatech.unicom.ui", "com.tencent.mm"};// 监控的app
+        serviceInfo.packageNames = new String[]{"com.tencent.mm"};
         serviceInfo.notificationTimeout = 100;
-        serviceInfo.flags = serviceInfo.flags | AccessibilityServiceInfo.FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY;
+        serviceInfo.flags = serviceInfo.flags | AccessibilityServiceInfo.FLAG_REQUEST_ENHANCED_WEB_ACCESSIBILITY | AccessibilityServiceInfo.FLAG_REPORT_VIEW_IDS;
         setServiceInfo(serviceInfo);
     }
 

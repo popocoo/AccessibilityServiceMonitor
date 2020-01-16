@@ -1,12 +1,12 @@
-package com.fadi.forestautoget.service;
+package dc.xyn.auto.service;
 
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-import com.fadi.forestautoget.util.CommonUtil;
-import com.fadi.forestautoget.util.Config;
+import dc.xyn.auto.util.CommonUtil;
+import dc.xyn.auto.util.Config;
 
 public class LiangTongMonitor {
 

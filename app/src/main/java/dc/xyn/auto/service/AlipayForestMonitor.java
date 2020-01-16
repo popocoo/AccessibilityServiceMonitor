@@ -1,11 +1,11 @@
-package com.fadi.forestautoget.service;
+package dc.xyn.auto.service;
 
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-import com.fadi.forestautoget.util.Config;
+import dc.xyn.auto.util.Config;
 
 import java.util.List;
 
