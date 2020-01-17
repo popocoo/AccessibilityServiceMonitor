@@ -90,13 +90,14 @@ internal object BDDExecutor {
     }
 
     fun findViewByText(str: String): AccessibilityNodeInfo? {
+        Log.e("dcdc", "findViewByText: $str\n")
         return findViewByText(accessibilityServiceForBDD.rootInActiveWindow, str)
     }
 
     fun findViewByText(nodeInfo: AccessibilityNodeInfo?, str: String): AccessibilityNodeInfo? {
         if (nodeInfo == null) return null
         if (nodeInfo.text != null &&nodeInfo.text.contains(str)) {
-            Log.e("dcdc", "findViewByText: $str\nView: $nodeInfo\n")
+            Log.e("dcdc", "View: $nodeInfo\n")
             return nodeInfo
         }
         for (i in 0 until nodeInfo.childCount) {

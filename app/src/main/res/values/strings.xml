@@ -2,5 +2,5 @@
     <string name="app_name">BDDTestService</string>
     <string name="settings_btn">打开辅助功能设置界面</string>
     <string name="bdd_btn">启动BDD辅助服务</string>
-    <string name="readme">"\n用于运行BDD自动化脚本，需要开启此软件的辅助功能, 并开启usb调试的安全设置(允许模拟点击) \n  by dc.xyn \n "</string>
+    <string name="readme">"\n    用于辅助运行BDD自动化脚本.\n请先开启此软件的辅助功能服务, 然后开启BDD辅助服务.\n注意: 需要开启开发者模式的usb调试, 有些系统还需要开启usb调试的安全设置(允许模拟点击)\n    by dc.xyn\n "</string>
 </resources>
